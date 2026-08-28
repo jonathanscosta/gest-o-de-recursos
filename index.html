@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Francisco Jonathan Sousa da Costa">
+    <meta name="description" content="sistema de gestão de segurança e estoque para as industrias wayne">
+    
+    <script src="script.js" defer></script>
+
+    <title>Indústrias Wayne | Controle de Acesso</title>
+
+    <link rel="stylesheet" href="estilo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="aplicacao">
+
+        <!-- ==========================================
+             BARRA LATERAL
+        =========================================== -->
+
+        <aside class="barra-lateral">
+
+            <div class="logotipo">
+
+                <div class="simbolo-logotipo">
+                    W
+                </div>
+
+                <div>
+                    <h1>WAYNE</h1>
+                    <span>INDÚSTRIAS</span>
+                </div>
+
+            </div>
+
+
+            <div class="titulo-sistema">
+                CONTROLE DE ACESSO
+            </div>
+
+
+            <nav>
+
+                <button class="item-navegacao ativo" data-secao="painel">
+                    <span>▦</span>
+                    Painel
+                </button>
+
+
+                <button class="item-navegacao" data-secao="usuarios">
+                    <span>♙</span>
+                    Usuários
+                </button>
+
+
+                <button class="item-navegacao" data-secao="areas">
+                    <span>▣</span>
+                    Áreas restritas
+                </button>
+
+
+                <button class="item-navegacao" data-secao="registros">
+                    <span>◷</span>
+                    Registros
+                </button>
+
+            </nav>
+
+
+            <div class="rodape-barra-lateral">
+
+                <span class="indicador-seguranca"></span>
+
+                Sistema operacional
+
+            </div>
+
+        </aside>
+
+
+        <!-- ==========================================
+             CONTEÚDO PRINCIPAL
+        =========================================== -->
+
+        <main class="conteudo-principal">
+
+
+            <!-- CABEÇALHO -->
+
+            <header class="cabecalho">
+
+                <div>
+
+                    <p class="rotulo-cabecalho">
+                        SISTEMA CORPORATIVO
+                    </p>
+
+                    <h2 id="titulo-pagina">
+                        Painel
+                    </h2>
+
+                </div>
+
+
+                <div class="usuario-cabecalho">
+
+                    <div class="avatar-usuario" id="avatar-cabecalho">
+                        ?
+                    </div>
+
+
+                    <div>
+
+                        <strong id="nome-usuario-cabecalho">
+                            Visitante
+                        </strong>
+
+                        <span id="funcao-usuario-cabecalho">
+                            Não autenticado
+                        </span>
+
+                    </div>
+
+
+                    <button id="botao-sair" class="botao-sair">
+                        Sair
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- ==========================================
+                 ÁREA DE LOGIN
+            =========================================== -->
+
+            <section id="secao-login" class="secao-login">
+
+                <div class="cartao-login">
+
+                    <div class="icone-login">
+                        W
+                    </div>
+
+
+                    <h2>
+                        Acesso restrito
+                    </h2>
+
+
+                    <p>
+                        Identifique-se para acessar os sistemas
+                        das Indústrias Wayne.
+                    </p>
+
+
+                    <form id="formulario-login">
+
+
+                        <div class="grupo-entrada">
+
+                            <label for="email-login">
+                                E-mail corporativo
+                            </label>
+
+                            <input type="email" id="email-login" placeholder="usuario@wayne.com" required>
+
+                        </div>
+
+
+                        <div class="grupo-entrada">
+
+                            <label for="senha-login">
+                                Senha
+                            </label>
+
+                            <input type="password" id="senha-login" placeholder="Digite sua senha" required>
+
+                        </div>
+
+
+                        <button type="submit" class="botao-principal">
+                            Entrar no sistema
+                        </button>
+
+                    </form>
+
+
+                    <div id="mensagem-login" class="mensagem"></div>
+
+
+                    <!-- CREDENCIAIS PARA TESTE -->
+
+                    <div class="credenciais-teste">
+
+                        <strong>
+                            Usuários para teste
+                        </strong>
+
+
+                        <p>
+                            Funcionário:
+                            joao@wayne.com / 1234
+                        </p>
+
+
+                        <p>
+                            Gerente:
+                            maria@wayne.com / 1234
+                        </p>
+
+
+                        <p>
+                            Segurança:
+                            bruce@wayne.com / 1234
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==========================================
+                 SISTEMA
+            =========================================== -->
+
+            <section id="secao-sistema" class="secao-sistema oculto">
+
+
+                <!-- ======================================
+                     PAINEL
+                ======================================= -->
+
+                <div id="painel-secao" class="secao-conteudo">
+
+                    <div class="cartao-boas-vindas">
+
+                        <div>
+
+                            <span class="pequeno-titulo">
+                                ACESSO CONFIRMADO
+                            </span>
+
+
+                            <h2>
+
+                                Bem-vindo,
+
+                                <span id="nome-boas-vindas"></span>
+
+                            </h2>
+
+
+                            <p>
+                                Seu nível de autorização permite
+                                acesso às áreas designadas abaixo.
+                            </p>
+
+                        </div>
+
+
+                        <div class="icone-boas-vindas">
+                            ✓
+                        </div>
+
+                    </div>
+
+
+                    <!-- ESTATÍSTICAS -->
+
+                    <div class="estatisticas">
+
+
+                        <div class="cartao-estatistica">
+
+                            <span>
+                                USUÁRIOS
+                            </span>
+
+                            <strong id="total-usuarios">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="cartao-estatistica">
+
+                            <span>
+                                ÁREAS
+                            </span>
+
+                            <strong id="total-areas">
+                                0
+                            </strong>
+
+                        </div>
+
+
+                        <div class="cartao-estatistica">
+
+                            <span>
+                                SEU NÍVEL
+                            </span>
+
+                            <strong id="nivel-usuario">
+                                -
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="cabecalho-secao">
+
+                        <div>
+
+                            <span class="pequeno-titulo">
+                                AUTORIZAÇÕES
+                            </span>
+
+                            <h3>
+                                Suas áreas de acesso
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="areas-painel" class="grade-areas"></div>
+
+                </div>
+
+
+                <!-- ======================================
+                     USUÁRIOS
+                ======================================= -->
+
+                <div id="usuarios-secao" class="secao-conteudo oculto">
+
+                    <div class="cabecalho-secao">
+
+                        <div>
+
+                            <span class="pequeno-titulo">
+                                ADMINISTRAÇÃO
+                            </span>
+
+                            <h3>
+                                Usuários cadastrados
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="conteiner-tabela">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Usuário
+                                    </th>
+
+                                    <th>
+                                        E-mail
+                                    </th>
+
+                                    <th>
+                                        Função
+                                    </th>
+
+                                    <th>
+                                        Nível
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="tabela-usuarios"></tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ======================================
+                     ÁREAS RESTRITAS
+                ======================================= -->
+
+                <div id="areas-secao" class="secao-conteudo oculto">
+
+                    <div class="cabecalho-secao">
+
+                        <div>
+
+                            <span class="pequeno-titulo">
+                                SEGURANÇA
+                            </span>
+
+                            <h3>
+                                Áreas restritas
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="todas-areas" class="grade-areas"></div>
+
+                </div>
+
+
+                <!-- ======================================
+                     REGISTROS
+                ======================================= -->
+
+                <div id="registros-secao" class="secao-conteudo oculto">
+
+                    <div class="cabecalho-secao">
+
+                        <div>
+
+                            <span class="pequeno-titulo">
+                                AUDITORIA
+                            </span>
+
+                            <h3>
+                                Registros de acesso
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="conteiner-registros" class="conteiner-registros"></div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+
+</body>
+
+</html>
